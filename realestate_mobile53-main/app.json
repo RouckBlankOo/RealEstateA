@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "RegisterApp",
+    "slug": "RegisterApp",
+    "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "orientation": "portrait",
+    "scheme": "registerapp",
+    "userInterfaceStyle": "automatic",
+    "updates": {
+      "enabled": false,
+      "fallbackToCacheTimeout": 0
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to help you find properties nearby and set property locations on the map.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to your location to help you find properties nearby and set property locations on the map."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyAqSchAEdRlw3Rsk17pfI7H4NaWnmiROi4"
+      }
+    },
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "package": "com.yourcompany.registerapp",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAqSchAEdRlw3Rsk17pfI7H4NaWnmiROi4"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-splash-screen",
+      "expo-font",
+      "expo-web-browser",
+      "expo-router",
+      "expo-localization",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location to help you find properties nearby and set property locations on the map."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "tsconfigPaths": true
+    }
+  }
+}
