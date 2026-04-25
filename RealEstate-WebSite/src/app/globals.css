@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Primary ── */
+  --color-primary: #a33900;
+  --color-primary-container: #cc4900;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fffbff;
+  --color-primary-fixed: #ffdbce;
+  --color-primary-fixed-dim: #ffb599;
+  --color-on-primary-fixed: #370e00;
+  --color-on-primary-fixed-variant: #7f2b00;
+  --color-inverse-primary: #ffb599;
+
+  /* ── Secondary ── */
+  --color-secondary: #9b4500;
+  --color-secondary-container: #fc8a40;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #672c00;
+  --color-secondary-fixed: #ffdbc9;
+  --color-secondary-fixed-dim: #ffb68d;
+  --color-on-secondary-fixed: #331200;
+  --color-on-secondary-fixed-variant: #763300;
+
+  /* ── Tertiary ── */
+  --color-tertiary: #005da8;
+  --color-tertiary-container: #0076d2;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed: #d4e3ff;
+  --color-tertiary-fixed-dim: #a4c9ff;
+  --color-on-tertiary-fixed: #001c39;
+
+  /* ── Surface & Background ── */
+  --color-surface: #f9f9f9;
+  --color-background: #f9f9f9;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-variant: #e2e2e2;
+  --color-surface-tint: #a73b00;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface: #1a1c1c;
+  --color-on-background: #1a1c1c;
+  --color-on-surface-variant: #5b4137;
+
+  /* ── Outline ── */
+  --color-outline: #8f7065;
+  --color-outline-variant: #e3bfb1;
+
+  /* ── Inverse ── */
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f1f1f1;
+
+  /* ── Error ── */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* ── Brand Accent ── */
+  --color-brand-orange: #f85b00;
+  --color-brand-peach: #fcb78e;
+
+  /* ── Border Radius ── */
+  --radius: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* ── Font Families ── */
+  --font-headline: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  --font-body: "Raleway", sans-serif;
+  --font-label: var(--font-manrope), "Manrope", sans-serif;
+  --font-stats: var(--font-comfortaa), "Comfortaa", sans-serif;
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-on-surface);
+}
+
+/* ── Glassmorphism Utilities ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-hero {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ice-border {
+  border: 1px solid rgba(227, 191, 177, 0.2);
+}
+
+.inner-glow {
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+/* ── Material Symbols ── */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ── Scrollbar ── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Stats font ── */
+.stats-font {
+  font-family: var(--font-stats);
+}
+
+/* ── Animations ── */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease-in-out infinite;
+}
+
